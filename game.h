@@ -276,9 +276,21 @@ public:
     {
         Move move;
 
-        cout << "Enter the ROW COL: ";
-        cin >> move.row;
-        cin >> move.col;
+        for (;;)
+        {
+            cout << "Enter the move (like this: 'R C'): ";
+
+            if (cin >> move.row && cin >> move.col)
+            {
+                if (move.col >= 1 && move.col <= SIZE && move.row >= 1 && move.row <= SIZE)
+                    break;
+            }
+            else
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+        }
 
         return move;
     }

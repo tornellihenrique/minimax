@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Driver code
 int main()
 {
     char board[3][3] =
@@ -13,7 +12,7 @@ int main()
             {EMPTY, EMPTY, EMPTY},
             {EMPTY, EMPTY, EMPTY}};
 
-    Game game(board, true, true, true);
+    Game game(board, true, true, false);
 
     game.play(true);
 
