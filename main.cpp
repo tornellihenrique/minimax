@@ -12,6 +12,7 @@ int main()
             {EMPTY, EMPTY, EMPTY},
             {EMPTY, EMPTY, EMPTY}};
 
+    // board, isX, XIA, OIA
     Game game(board, true, true, false);
 
     game.play(true);

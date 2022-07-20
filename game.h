@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <limits>
 
 #define SIZE 3
 
@@ -283,7 +284,12 @@ public:
             if (cin >> move.row && cin >> move.col)
             {
                 if (move.col >= 1 && move.col <= SIZE && move.row >= 1 && move.row <= SIZE)
-                    break;
+		{
+		    move.row--;
+        	    move.col--;
+
+		    if (board[move.row][move.col] == EMPTY) break;
+		}
             }
             else
             {
